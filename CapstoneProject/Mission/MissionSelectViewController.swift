@@ -32,10 +32,10 @@ class MissionSelectViewController: UIViewController {
     
     func setUI(){
         if mission?.difficulty == .basic{
-            textMission.text = "미션 - Basic"
+            textMission.text = "📝미션 - 기본"
         }
         if mission?.difficulty == .difficult{
-            textMission.text = "미션 - Difficult"
+            textMission.text = "📝미션 - 어려움"
         }
         
         textMission.font = UIFont.boldSystemFont(ofSize: 45)
@@ -94,7 +94,7 @@ class MissionSelectViewController: UIViewController {
             touchImageView.topAnchor.constraint(equalTo: missionLabel.bottomAnchor, constant: 20),
             touchImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             touchImageView.widthAnchor.constraint(equalToConstant: 100),
-            touchImageView.heightAnchor.constraint(equalToConstant: 100 ),
+            touchImageView.heightAnchor.constraint(equalToConstant: 100),
             
             // 세 번째 레이블 제약 조건
             instructionLabel.topAnchor.constraint(equalTo: touchImageView.bottomAnchor, constant: 20),
@@ -105,7 +105,7 @@ class MissionSelectViewController: UIViewController {
     }
     
     func makeMissionStr(index: Int){
-        missionStr += " \(index + 1). "
+        missionStr += " • "
         let answer = mission!.answers[index]
         switch answer.selectHotOrDrink {
         case .hot:
@@ -116,7 +116,7 @@ class MissionSelectViewController: UIViewController {
             break
         }
         
-        missionStr += (answer.selectDrink?.name ?? "") + "을(를)    "
+        missionStr += (answer.selectDrink?.name ?? "") + " 을(를)    "
         
         switch answer.selectDensity {
         case .basic :
