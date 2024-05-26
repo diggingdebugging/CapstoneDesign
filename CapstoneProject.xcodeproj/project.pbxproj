@@ -112,8 +112,8 @@
 				6AC16E222C0302D200AFBF37 /* DifficultySelectViewController.swift */,
 				6A8A84002BFDF93800AA75CA /* MissionSelectViewController.swift */,
 				6AAEFFA02BFECCED009887B7 /* KioskMissionViewController.swift */,
-				6A442A6D2BFEE7FA0063C715 /* FeedBackViewController.swift */,
 				6A442A6F2BFEEA0F0063C715 /* OptionMissionViewController.swift */,
+				6A442A6D2BFEE7FA0063C715 /* FeedBackViewController.swift */,
 			);
 			path = Mission;
 			sourceTree = "<group>";

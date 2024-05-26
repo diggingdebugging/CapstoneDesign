@@ -173,6 +173,11 @@ class OptionMissionViewController: UIViewController {
         else{
             hotOrCold = nil
         }
+        if kioskMissionViewController?.mission?.difficulty == .basic {
+            if kioskMissionViewController?.mission?.answers[0].selectHotOrDrink != hotOrCold {
+                performSegue(withIdentifier: "GotoFeedBackViewController2" , sender: nil)
+            }
+        }
     }
     
     func optionSelect(){
@@ -187,6 +192,12 @@ class OptionMissionViewController: UIViewController {
             density = .addShot2
         default:
             density = nil
+        }
+        
+        if kioskMissionViewController?.mission?.difficulty == .basic {
+            if kioskMissionViewController?.mission?.answers[0].selectDensity != density {
+                performSegue(withIdentifier: "GotoFeedBackViewController2" , sender: nil)
+            }
         }
     }
 }

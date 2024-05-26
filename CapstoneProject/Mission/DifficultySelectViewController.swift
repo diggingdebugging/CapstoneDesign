@@ -49,7 +49,7 @@ class DifficultySelectViewController: UIViewController {
         stackView.addArrangedSubview(basicButton)
         stackView.addArrangedSubview(difficultButton)
         stackView.spacing = 30
-        stackView.axis = .vertical
+        stackView.axis = .vertical        
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .fillEqually
         

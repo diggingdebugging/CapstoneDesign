@@ -33,7 +33,6 @@ class KioskMissionViewController: UIViewController {
         
         setupTabBar()
         setupCollectionView()
-        setupMission()
     }
     
     @IBAction func calcButton(_ sender: UIButton) { // 계산하기 버튼
@@ -125,12 +124,15 @@ extension KioskMissionViewController: UICollectionViewDelegateFlowLayout, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if list[indexPath.row].name == mission?.answer.selectDrink?.name {
-//            performSegue(withIdentifier: "GotoOptionMissionViewController", sender: indexPath)
-//        }
-//        else {
-//           performSegue(withIdentifier: "GotoFeedBackViewController" , sender: nil)
-//        }
+        if mission?.difficulty == .basic{
+            if list[indexPath.row].name == mission?.answers[0].selectDrink?.name {
+                performSegue(withIdentifier: "GotoOptionMissionViewController", sender: indexPath)
+            }
+            else {
+               performSegue(withIdentifier: "GotoFeedBackViewController" , sender: nil)
+            }
+        }
+       
         
     }
 }
@@ -243,13 +245,6 @@ extension KioskMissionViewController: UITabBarDelegate { // TabBar Delegate
             break
         }
         collectionView.reloadData() // 이미지를 바꾸기 위해 reload()
-    }
-}
-
-// Mission
-extension KioskMissionViewController {
-    func setupMission() {
-        
     }
 }
 
