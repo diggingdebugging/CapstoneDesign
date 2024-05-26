@@ -28,9 +28,11 @@ class OptionMissionViewController: UIViewController {
     var foodIndex: Int?
     var hotOrCold: HotOrCold?
     var density: Density?
+    var missionRef: Mission?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        missionRef = kioskMissionViewController?.mission
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,18 +55,21 @@ class OptionMissionViewController: UIViewController {
             priceLabel.text = String(selectedFood.price)
             optionImage.image = UIImage(named: selectedFood.imageName)
         }
+        
     }
     
+   
+    
     @IBAction func addBtnTouched(_ sender: UIButton) { //담기버튼
-        guard optionindex != nil && hotcoldindex != nil else {
-            if optionindex == nil {
-                showSnackbar(message: "농도를 선택해주세요",  description: nil)
-            }
-            if hotcoldindex == nil {
-                showSnackbar(message: "hot/cold를 선택해주세요",  description: nil)
-            }
-            return
-        }
+//        guard optionindex != nil && hotcoldindex != nil else {
+//            if optionindex == nil {
+//                showSnackbar(message: "농도를 선택해주세요",  description: nil)
+//            }
+//            if hotcoldindex == nil {
+//                showSnackbar(message: "hot/cold를 선택해주세요",  description: nil)
+//            }
+//            return
+//        }
         if let foodIndex = foodIndex {
             let option = kioskMissionViewController?.select
             var selectedFood: Food?

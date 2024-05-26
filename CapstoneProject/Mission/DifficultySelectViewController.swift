@@ -133,6 +133,7 @@ class DifficultySelectViewController: UIViewController {
            if segue.identifier == "GotoMissionSelectViewController" {
                if let missionSelectViewController = segue.destination as? MissionSelectViewController {
                    missionSelectViewController.mission = sender as? Mission
+                   missionSelectViewController.modalPresentationStyle = .fullScreen
                }
            }
        }

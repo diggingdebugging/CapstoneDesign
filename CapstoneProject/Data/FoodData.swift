@@ -10,7 +10,7 @@ import Foundation
 protocol Food{ // 음식 정보를 담고있는 protocol
     var name: String { get }
     var imageName: String { get }
-    var price: Int { get }
+    var price: Int { get }    
 }
 
 struct FoodState { // 음식 상태를 담고있는 구조체

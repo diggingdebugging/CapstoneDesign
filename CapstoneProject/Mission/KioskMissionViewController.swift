@@ -19,6 +19,7 @@ class KioskMissionViewController: UIViewController {
     var foodStateList : [FoodState] = []
     var totalPrice: Int = 0
     var mission: Mission?
+    var rightAnswer: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +37,43 @@ class KioskMissionViewController: UIViewController {
     }
     
     @IBAction func calcButton(_ sender: UIButton) { // 계산하기 버튼
+        if mission?.difficulty == .difficult {
+            prepareAnswer()
+            if rightAnswer {
+                print("성공")
+            }
+            else if rightAnswer == false {
+                performSegue(withIdentifier: "GotoFeedBackViewController", sender: nil)
+            }
+        }
         totalPrice = foodStateList.reduce(0) { $0 + $1.totalPrice }
-        performSegue(withIdentifier: "GoToSelectionViewController", sender: totalPrice)
+        //performSegue(withIdentifier: "GoToSelectionViewController", sender: totalPrice)
     }
     
+    func prepareAnswer(){ // 정답비교
+        var count = 0
+        if mission?.answers.count != foodStateList.count {
+            return
+        }
+        for i in 0..<3 {
+            // 역순으로 순회하면서 요소 제거
+            for j in (0..<foodStateList.count).reversed() {
+                if mission?.answers[i].selectDrink?.name == foodStateList[j].food.name {
+                    if mission?.answers[i].selectHotOrDrink == foodStateList[j].hotOrCold {
+                        if mission?.answers[i].selectDensity == foodStateList[j].density {
+                            count += 1
+                            foodStateList.remove(at: j)
+                        }
+                    }
+                }
+            }
+        }
+        
+        if count == 3 {
+            rightAnswer = true
+        }
+        
+    }
 }
 extension KioskMissionViewController{ // tabBar, collectionView UI
     // TabBar UI
@@ -132,7 +166,7 @@ extension KioskMissionViewController: UICollectionViewDelegateFlowLayout, UIColl
                performSegue(withIdentifier: "GotoFeedBackViewController" , sender: nil)
             }
         }
-       
+        performSegue(withIdentifier: "GotoOptionMissionViewController", sender: indexPath)
         
     }
 }

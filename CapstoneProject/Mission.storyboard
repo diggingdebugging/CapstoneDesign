@@ -299,6 +299,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="28"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="calcButton:" destination="uaQ-v6-4O7" eventType="touchUpInside" id="0Il-dY-e5q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9P5-Ni-rfJ"/>
@@ -606,7 +609,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0Kk-kf-Uhy"/>
+        <segue reference="XsG-N4-1rB"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="minus" catalog="system" width="128" height="26"/>

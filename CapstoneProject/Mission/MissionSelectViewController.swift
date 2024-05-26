@@ -23,6 +23,7 @@ class MissionSelectViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         
+        
         // missionLabel gesture달기
         view.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goMisson1))
@@ -92,8 +93,8 @@ class MissionSelectViewController: UIViewController {
             // 이미지뷰 제약 조건
             touchImageView.topAnchor.constraint(equalTo: missionLabel.bottomAnchor, constant: 20),
             touchImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            touchImageView.widthAnchor.constraint(equalToConstant: 130),
-            touchImageView.heightAnchor.constraint(equalToConstant: 130),
+            touchImageView.widthAnchor.constraint(equalToConstant: 100),
+            touchImageView.heightAnchor.constraint(equalToConstant: 100 ),
             
             // 세 번째 레이블 제약 조건
             instructionLabel.topAnchor.constraint(equalTo: touchImageView.bottomAnchor, constant: 20),
@@ -146,7 +147,9 @@ extension MissionSelectViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? KioskMissionViewController {
             vc.mission = sender as? Mission
+            vc.modalPresentationStyle = .fullScreen
         }
+        
     }
 }
 
