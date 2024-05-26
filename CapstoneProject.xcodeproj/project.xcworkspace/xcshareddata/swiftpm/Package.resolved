@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "jjfloatingactionbutton",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jjochen/JJFloatingActionButton",
+      "state" : {
+        "revision" : "2c561601ec0da6f85c2c061a2560d82d39832951",
+        "version" : "3.0.1"
+      }
+    },
+    {
+      "identity" : "swiftentrykit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/huri000/SwiftEntryKit.git",
+      "state" : {
+        "revision" : "5ad36cccf0c4b9fea32f4e9b17a8e38f07563ef0",
+        "version" : "2.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}
