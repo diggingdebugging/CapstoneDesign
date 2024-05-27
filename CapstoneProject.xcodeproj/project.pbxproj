@@ -11,6 +11,7 @@
 		6A33F74D2BECDEE7000DD7BD /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33F74C2BECDEE7000DD7BD /* OptionViewController.swift */; };
 		6A442A6E2BFEE7FA0063C715 /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A442A6D2BFEE7FA0063C715 /* FeedBackViewController.swift */; };
 		6A442A702BFEEA0F0063C715 /* OptionMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A442A6F2BFEEA0F0063C715 /* OptionMissionViewController.swift */; };
+		6A636FF02C04965100A76F35 /* Jalnan2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6A636FEF2C04965100A76F35 /* Jalnan2.otf */; };
 		6A6807CB2BDCF5B800949018 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6807CA2BDCF5B800949018 /* SelectionViewController.swift */; };
 		6A6A00792BDF95C90082245A /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6A00782BDF95C90082245A /* PayViewController.swift */; };
 		6A8A83FF2BFDF7E700AA75CA /* MissionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A83FE2BFDF7E700AA75CA /* MissionData.swift */; };
@@ -38,6 +39,7 @@
 		6A33F74C2BECDEE7000DD7BD /* OptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
 		6A442A6D2BFEE7FA0063C715 /* FeedBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackViewController.swift; sourceTree = "<group>"; };
 		6A442A6F2BFEEA0F0063C715 /* OptionMissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionMissionViewController.swift; sourceTree = "<group>"; };
+		6A636FEF2C04965100A76F35 /* Jalnan2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Jalnan2.otf; sourceTree = "<group>"; };
 		6A6807CA2BDCF5B800949018 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		6A6A00782BDF95C90082245A /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		6A8A83FE2BFDF7E700AA75CA /* MissionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionData.swift; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A636FEE2C04963500A76F35 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				6A636FEF2C04965100A76F35 /* Jalnan2.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		6AAEFF9A2BFEC6D2009887B7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +147,7 @@
 		FF5330CC2BD0F0E20057A538 /* CapstoneProject */ = {
 			isa = PBXGroup;
 			children = (
+				6A636FEE2C04963500A76F35 /* Font */,
 				FF5330CD2BD0F0E20057A538 /* AppDelegate.swift */,
 				FF5330CF2BD0F0E20057A538 /* SceneDelegate.swift */,
 				FF5330D32BD0F0E20057A538 /* Main.storyboard */,
@@ -220,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A636FF02C04965100A76F35 /* Jalnan2.otf in Resources */,
 				FF5330E42BD0F4930057A538 /* Kiosk.storyboard in Resources */,
 				FF5330D72BD0F0E40057A538 /* Assets.xcassets in Resources */,
 				FF5330DA2BD0F0E40057A538 /* Base in Resources */,
