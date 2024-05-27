@@ -10,6 +10,7 @@ import UIKit
 class MissionSelectViewController: UIViewController {
     var missionLabel = UILabel()
     var textMission = UILabel()
+    var difficultyLabel = UILabel()
     var instructionLabel = UILabel()
     var touchImageView = UIImageView()
     
@@ -31,15 +32,28 @@ class MissionSelectViewController: UIViewController {
     }
     
     func setUI(){
+//        if mission?.difficulty == .basic{
+//            textMission.text = "📝미션 [기본]"
+//        }
+//        if mission?.difficulty == .difficult{
+//            textMission.text = "📝미션 [어려움]"
+//        }
+        textMission.text = "BUDDY MISSION"
+        textMission.font = UIFont(descriptor: UIFontDescriptor(name: "American Typewriter", size: 38).withSymbolicTraits(.traitBold)!, size: 38)
+        textMission.textAlignment = .center
+        textMission.backgroundColor = UIColor(hexCode: "143785")
+        textMission.textColor = UIColor.white
+        
         if mission?.difficulty == .basic{
-            textMission.text = "📝미션 - 기본"
+            difficultyLabel.text = "[기본]"
         }
         if mission?.difficulty == .difficult{
-            textMission.text = "📝미션 - 어려움"
+            difficultyLabel.text = "[어려움]"
         }
-        textMission.font = UIFont(name: "Jalnan2", size: 45)
-        textMission.textAlignment = .left
-        
+        difficultyLabel.font = UIFont(name: "Jalnan2", size: 30)
+        difficultyLabel.textAlignment = .center
+        difficultyLabel.textColor = UIColor(hexCode: "143785")
+                
         missionLabel.numberOfLines = 0
         if mission?.difficulty == .basic { // 기본미션
             makeMissionStr(index: 0)
@@ -50,6 +64,8 @@ class MissionSelectViewController: UIViewController {
                 makeMissionStr(index: i)
             }
         }
+//        missionLabel.layer.borderWidth = 2
+//        missionLabel.layer.borderColor = UIColor.black.cgColor
         missionLabel.text = missionStr
         missionLabel.font = UIFont(name: "Jalnan2", size: 25)
         missionLabel.textAlignment = .left
@@ -63,11 +79,13 @@ class MissionSelectViewController: UIViewController {
         instructionLabel.textColor = .gray
         
         textMission.translatesAutoresizingMaskIntoConstraints = false
+        difficultyLabel.translatesAutoresizingMaskIntoConstraints = false
         missionLabel.translatesAutoresizingMaskIntoConstraints = false
-        instructionLabel.translatesAutoresizingMaskIntoConstraints = false
         touchImageView.translatesAutoresizingMaskIntoConstraints = false
+        instructionLabel.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(textMission)
+        view.addSubview(difficultyLabel)
         view.addSubview(missionLabel)
         view.addSubview(touchImageView)
         view.addSubview(instructionLabel)
@@ -75,27 +93,31 @@ class MissionSelectViewController: UIViewController {
         
         // 오토레이아웃 설정
         NSLayoutConstraint.activate([
-              // 첫 번째 레이블 제약 조건
-              textMission.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
-              textMission.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-              textMission.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-              
-              // 두 번째 레이블 제약 조건
-              missionLabel.topAnchor.constraint(equalTo: textMission.bottomAnchor, constant: 40),
-              missionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-              missionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-              
-              // 이미지뷰 제약 조건
-              touchImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60),
-              touchImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-              touchImageView.widthAnchor.constraint(equalToConstant: 100),
-              touchImageView.heightAnchor.constraint(equalToConstant: 100),
-              
-              // 세 번째 레이블 제약 조건
-              instructionLabel.bottomAnchor.constraint(equalTo: touchImageView.topAnchor, constant: -20),
-              instructionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-              instructionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-          ])
+            // 첫 번째 레이블 제약 조건
+            textMission.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            textMission.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            textMission.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            
+            difficultyLabel.topAnchor.constraint(equalTo: textMission.bottomAnchor, constant: 20),
+            difficultyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            difficultyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            // 두 번째 레이블 제약 조건
+            missionLabel.topAnchor.constraint(equalTo: difficultyLabel.bottomAnchor, constant: 60),
+            missionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            missionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            // touchImageView 제약 조건
+            touchImageView.bottomAnchor.constraint(equalTo: instructionLabel.topAnchor, constant: -20),
+            touchImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            touchImageView.widthAnchor.constraint(equalToConstant: 130),
+            touchImageView.heightAnchor.constraint(equalToConstant: 130),
+            
+            // instructionLabel 제약 조건
+            instructionLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
+            instructionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            instructionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        ])
         
     }
     
@@ -140,10 +162,10 @@ class MissionSelectViewController: UIViewController {
     
     @objc func goMisson(_ sender: UILabel) { // 아메리카노, 차가움, 기본, 결제하기버튼누르기, 포장하기버튼 누르기
         performSegue(withIdentifier:"GotoKioskMissionViewController" , sender: mission)
-//        let storyboard = UIStoryboard(name: "Mission", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "KioskMissionViewController") as! KioskMissionViewController
-//        vc.modalPresentationStyle = .fullScreen
-//        present(vc, animated: true)
+        //        let storyboard = UIStoryboard(name: "Mission", bundle: nil)
+        //        let vc = storyboard.instantiateViewController(withIdentifier: "KioskMissionViewController") as! KioskMissionViewController
+        //        vc.modalPresentationStyle = .fullScreen
+        //        present(vc, animated: true)
     }
 }
 
@@ -154,6 +176,27 @@ extension MissionSelectViewController{
             vc.modalPresentationStyle = .fullScreen
         }
         
+    }
+}
+
+extension UIColor {
+    
+    convenience init(hexCode: String, alpha: CGFloat = 1.0) {
+        var hexFormatted: String = hexCode.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
+        
+        if hexFormatted.hasPrefix("#") {
+            hexFormatted = String(hexFormatted.dropFirst())
+        }
+        
+        assert(hexFormatted.count == 6, "Invalid hex code used.")
+        
+        var rgbValue: UInt64 = 0
+        Scanner(string: hexFormatted).scanHexInt64(&rgbValue)
+        
+        self.init(red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+                  green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+                  blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+                  alpha: alpha)
     }
 }
 
