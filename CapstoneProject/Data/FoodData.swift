@@ -47,7 +47,16 @@ extension Coffee {
              price: 4500),
         Coffee(name: "카페모카",
              imageName: "cafe-moca",
-             price: 5000)
+             price: 5000),
+        Coffee(name: "플랫화이트",
+               imageName: "flat-white",
+               price: 4500),
+        Coffee(name: "화이트모카",
+               imageName: "white-mocha",
+               price: 4200),
+        Coffee(name: "콘파냐",
+               imageName: "conpana",
+               price: 4300)
     ]
 }
 
@@ -62,9 +71,9 @@ extension AdeAndTea {
         AdeAndTea(name: "히비스커스티",
              imageName: "hibiscus-tea",
              price: 4500),
-        AdeAndTea(name: "딸기라떼",
-             imageName: "strawberry-latte",
-             price: 4800),
+        AdeAndTea(name: "유자민트티",
+               imageName: "yuzu-mint-tea",
+               price: 4000),
         AdeAndTea(name: "자몽에이드",
              imageName: "grapefruit-ade",
              price: 4200),

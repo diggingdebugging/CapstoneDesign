@@ -143,7 +143,7 @@ extension KioskMissionViewController: UICollectionViewDelegateFlowLayout, UIColl
         let padding: CGFloat = 16
         
         let width = (collectionView.bounds.width - interItemSpacing * 2 - padding * 2) / 3
-        let height = width * 1.5
+        let height = width * 1.8
         
         return CGSize(width: width, height: height)
         
