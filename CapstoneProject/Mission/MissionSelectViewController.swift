@@ -140,6 +140,10 @@ class MissionSelectViewController: UIViewController {
     
     @objc func goMisson1(_ sender: UILabel) { // 아메리카노, 차가움, 기본, 결제하기버튼누르기, 포장하기버튼 누르기
         performSegue(withIdentifier:"GotoKioskMissionViewController" , sender: mission)
+//        let storyboard = UIStoryboard(name: "Mission", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "KioskMissionViewController") as! KioskMissionViewController
+//        vc.modalPresentationStyle = .fullScreen
+//        present(vc, animated: true)
     }
 }
 

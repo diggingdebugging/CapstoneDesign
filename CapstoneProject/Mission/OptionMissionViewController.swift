@@ -61,15 +61,6 @@ class OptionMissionViewController: UIViewController {
    
     
     @IBAction func addBtnTouched(_ sender: UIButton) { //담기버튼
-//        guard optionindex != nil && hotcoldindex != nil else {
-//            if optionindex == nil {
-//                showSnackbar(message: "농도를 선택해주세요",  description: nil)
-//            }
-//            if hotcoldindex == nil {
-//                showSnackbar(message: "hot/cold를 선택해주세요",  description: nil)
-//            }
-//            return
-//        }
         if let foodIndex = foodIndex {
             let option = kioskMissionViewController?.select
             var selectedFood: Food?
@@ -87,14 +78,30 @@ class OptionMissionViewController: UIViewController {
             }
             if let food = selectedFood {
                 var foodState = FoodState(food: food, count: 1, optionPrice: 0, totalPrice: food.price)
-                foodState.hotOrCold = self.hotOrCold
-                foodState.density = self.density
-                if foodState.density == .addShot {
-                    foodState.optionPrice = 500
-                } else if foodState.density == .addShot2 {
-                    foodState.optionPrice = 1000
+                if selectedFood as? Coffee != nil {
+                    guard optionindex != nil && hotcoldindex != nil else {
+                        if optionindex == nil {
+                            showSnackbar(message: "농도를 선택해주세요",  description: nil)
+                        }
+                        if hotcoldindex == nil {
+                            showSnackbar(message: "hot/cold를 선택해주세요",  description: nil)
+                        }
+                        return
+                    }
+                    foodState.hotOrCold = self.hotOrCold
+                    foodState.density = self.density
+                    if foodState.density == .addShot {
+                        foodState.optionPrice = 500
+                    } else if foodState.density == .addShot2 {
+                        foodState.optionPrice = 1000
+                    }
+                    foodState.totalPrice += foodState.optionPrice
                 }
-                foodState.totalPrice += foodState.optionPrice
+                else {
+                    foodState.hotOrCold = nil
+                    foodState.density = nil
+                }
+                
                 kioskMissionViewController?.foodStateList.append(foodState)
                 kioskMissionViewController?.tableView.reloadData()
             }

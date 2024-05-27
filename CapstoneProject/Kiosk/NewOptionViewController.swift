@@ -10,7 +10,6 @@ import SwiftEntryKit
 
 class NewOptionViewController: UIViewController {
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
