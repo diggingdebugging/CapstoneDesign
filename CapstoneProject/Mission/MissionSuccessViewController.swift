@@ -7,23 +7,22 @@
 
 import UIKit
 
+import UIKit
+import Lottie
+
 class MissionSuccessViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupUI()
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupUI() {
+        let animationView = LottieAnimationView(name: "fireworks") // 다운로드한 파일 이름
+        animationView.frame = view.bounds
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .playOnce
+        view.addSubview(animationView)
+        animationView.play()
     }
-    */
-
 }

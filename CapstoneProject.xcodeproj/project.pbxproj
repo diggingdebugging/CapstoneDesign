@@ -19,6 +19,7 @@
 		6A9C014F2BEC9916009F070F /* PayImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9C014E2BEC9916009F070F /* PayImageViewController.swift */; };
 		6AAEFF9E2BFEC9A3009887B7 /* Mission.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AAEFF9D2BFEC9A3009887B7 /* Mission.storyboard */; };
 		6AAEFFA12BFECCED009887B7 /* KioskMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAEFFA02BFECCED009887B7 /* KioskMissionViewController.swift */; };
+		6ABF01612C061EFD0005A29E /* MissionSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF01602C061EFD0005A29E /* MissionSuccessViewController.swift */; };
 		6AC16E232C0302D200AFBF37 /* DifficultySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC16E222C0302D200AFBF37 /* DifficultySelectViewController.swift */; };
 		6AE0116C2C01C401004FC6B8 /* JJFloatingActionButton in Frameworks */ = {isa = PBXBuildFile; productRef = 6AE0116B2C01C401004FC6B8 /* JJFloatingActionButton */; };
 		FF5330CE2BD0F0E20057A538 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5330CD2BD0F0E20057A538 /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 		6A9C014E2BEC9916009F070F /* PayImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayImageViewController.swift; sourceTree = "<group>"; };
 		6AAEFF9D2BFEC9A3009887B7 /* Mission.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mission.storyboard; sourceTree = "<group>"; };
 		6AAEFFA02BFECCED009887B7 /* KioskMissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskMissionViewController.swift; sourceTree = "<group>"; };
+		6ABF01602C061EFD0005A29E /* MissionSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionSuccessViewController.swift; sourceTree = "<group>"; };
 		6AC16E222C0302D200AFBF37 /* DifficultySelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultySelectViewController.swift; sourceTree = "<group>"; };
 		FF5330CA2BD0F0E20057A538 /* CapstoneProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapstoneProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF5330CD2BD0F0E20057A538 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				6AAEFFA02BFECCED009887B7 /* KioskMissionViewController.swift */,
 				6A442A6F2BFEEA0F0063C715 /* OptionMissionViewController.swift */,
 				6A442A6D2BFEE7FA0063C715 /* FeedBackViewController.swift */,
+				6ABF01602C061EFD0005A29E /* MissionSuccessViewController.swift */,
 			);
 			path = Mission;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				FF5330E82BD124220057A538 /* FoodData.swift in Sources */,
 				FFE659302BEE70540021917A /* OptionCell.swift in Sources */,
 				6A442A6E2BFEE7FA0063C715 /* FeedBackViewController.swift in Sources */,
+				6ABF01612C061EFD0005A29E /* MissionSuccessViewController.swift in Sources */,
 				FF5330E22BD0F37A0057A538 /* MainViewController.swift in Sources */,
 				6A442A702BFEEA0F0063C715 /* OptionMissionViewController.swift in Sources */,
 				6A9C014F2BEC9916009F070F /* PayImageViewController.swift in Sources */,
