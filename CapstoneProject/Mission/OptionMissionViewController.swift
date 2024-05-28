@@ -33,6 +33,7 @@ class OptionMissionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         missionRef = kioskMissionViewController?.mission
+        setupUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,6 +56,26 @@ class OptionMissionViewController: UIViewController {
             priceLabel.text = String(selectedFood.price)
             optionImage.image = UIImage(named: selectedFood.imageName)
         }
+        
+    }
+    
+    func setupUI(){
+        nameLabel.layer.masksToBounds = true  // 추가
+        priceLabel.layer.masksToBounds = true
+        nameLabel.layer.cornerRadius = 10
+        priceLabel.layer.cornerRadius = 10
+        optionImage.layer.cornerRadius = 10
+               
+        hotOrColdBtn[0].layer.cornerRadius = 10
+        hotOrColdBtn[1].layer.cornerRadius = 10
+        for i in 0...3 {
+            optionBtn[i].layer.cornerRadius = 10
+        }
+        
+        cancelBtn.layer.cornerRadius = 10
+        addBtn.layer.cornerRadius = 10
+        
+        
         
     }
     

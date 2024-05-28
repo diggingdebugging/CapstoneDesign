@@ -86,7 +86,7 @@ extension KioskMissionViewController{ // tabBar, collectionView UI
         
         // 선택된 탭 텍스트 속성
         let selectedAttributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.blue,
+            .foregroundColor: UIColor(hexCode: "143785"),
             .font: UIFont.boldSystemFont(ofSize: 18)  // 텍스트 크기를 18로 설정
         ]
         
@@ -177,10 +177,10 @@ extension KioskMissionViewController{ // prepare, performSegue호출되면 호�
             vc.kioskMissionViewController = self
             vc.foodIndex = (sender as? IndexPath)?.row
         }
-//        if let vc = segue.destination as? SelectionViewController{
-//            vc.totalPrice = sender as? Int
-//        }
-//        
+        //        if let vc = segue.destination as? SelectionViewController{
+        //            vc.totalPrice = sender as? Int
+        //        }
+        //
     }
 }
 
@@ -213,10 +213,10 @@ extension KioskMissionViewController: UITableViewDelegate, UITableViewDataSource
         
         // cell의 hotOrCold Option
         if foodState.hotOrCold == .hot {
-            cell.optionTwoLabel.text = "뜨거운(HOT)"
+            cell.optionTwoLabel.text = "뜨거움(HOT)"
         }
         else if foodState.hotOrCold == .cold {
-            cell.optionTwoLabel.text = "차가운(ICE)"
+            cell.optionTwoLabel.text = "차가움(ICE)"
         }
         
         // cell의 density Option
