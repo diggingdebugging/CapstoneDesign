@@ -46,6 +46,11 @@ class KioskMissionViewController: UIViewController {
                 performSegue(withIdentifier: "GotoFeedBackViewController", sender: nil)
             }
         }
+        
+        if mission?.difficulty == .basic {
+            performSegue(withIdentifier: "GotoSelectionMissionVIewController", sender: mission)
+        }
+        
         totalPrice = foodStateList.reduce(0) { $0 + $1.totalPrice }
         //performSegue(withIdentifier: "GoToSelectionViewController", sender: totalPrice)
     }
@@ -177,10 +182,11 @@ extension KioskMissionViewController{ // prepare, performSegue호출되면 호�
             vc.kioskMissionViewController = self
             vc.foodIndex = (sender as? IndexPath)?.row
         }
-        //        if let vc = segue.destination as? SelectionViewController{
-        //            vc.totalPrice = sender as? Int
-        //        }
-        //
+        
+        if let vc = segue.destination as? SelectionMissionViewController{
+            vc.mission = sender as? Mission
+        }
+
     }
 }
 

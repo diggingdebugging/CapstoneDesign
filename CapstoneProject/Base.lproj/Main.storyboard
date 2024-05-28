@@ -50,6 +50,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ik5-Gt-dlA" secondAttribute="trailing" constant="30" id="jFC-1o-iRK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="missionButton" destination="vqg-BG-KIS" id="ElA-ks-TXg"/>
+                        <outlet property="practiceButton" destination="esL-PI-Nwr" id="5tf-hE-Sn3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

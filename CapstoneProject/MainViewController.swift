@@ -8,10 +8,18 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
+    @IBOutlet weak var missionButton: UIButton!
+    @IBOutlet weak var practiceButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
+    }
+    
+    func setupUI(){
+        missionButton.backgroundColor = UIColor(hexCode: "143875")
+        practiceButton.backgroundColor = UIColor(hexCode: "143875")
     }
     
     //클릭시 Kiosk로 이동

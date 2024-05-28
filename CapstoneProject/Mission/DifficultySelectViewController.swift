@@ -74,10 +74,11 @@ class DifficultySelectViewController: UIViewController {
             //missionLabel.text = "No mission available"
             return
         }
+        let randomAction = Action.allCases.randomElement()
         
         let answer = Answer(selectDrink: randomDrink, selectHotOrDrink: randomHotOrCold, selectDensity: randomDensity) // answer생성
         answers.append(answer)
-        mission = Mission(difficulty: .basic, answers: answers) // mission 생성
+        mission = Mission(difficulty: .basic, answers: answers, action:  randomAction) // mission 생성
     }
     
     func addCoffeeList(){ // 기본 미션에 커피데이터 넣기
@@ -105,9 +106,8 @@ class DifficultySelectViewController: UIViewController {
             answers.append(answer)
         }
         
-        mission = Mission(difficulty: .difficult, answers: answers) // mission 생성
-      
-        
+        let randomAction = Action.allCases.randomElement()
+        mission = Mission(difficulty: .difficult, answers: answers, action: randomAction) // mission 생성        
     }
     
     func addFoodList(){

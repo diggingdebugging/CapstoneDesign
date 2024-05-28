@@ -11,6 +11,7 @@ class MissionSelectViewController: UIViewController {
     var missionLabel = UILabel()
     var textMission = UILabel()
     var difficultyLabel = UILabel()
+    var actionLabel = UILabel()
     var instructionLabel = UILabel()
     var touchImageView = UIImageView()
     
@@ -18,6 +19,7 @@ class MissionSelectViewController: UIViewController {
     var mission: Mission?
     var difficultySelectViewController: DifficultySelectViewController?
     var missionStr = ""
+    var actionStr = ""
     
     
     override func viewDidLoad() {
@@ -67,8 +69,20 @@ class MissionSelectViewController: UIViewController {
 //        missionLabel.layer.borderWidth = 2
 //        missionLabel.layer.borderColor = UIColor.black.cgColor
         missionLabel.text = missionStr
-        missionLabel.font = UIFont(name: "Jalnan2", size: 25)
+        missionLabel.font = UIFont(name: "Jalnan2", size: 22)
         missionLabel.textAlignment = .left
+        
+        if mission?.action == .forhere {
+            actionStr = " • 매장을 이용하시오."
+        }
+        
+        if mission?.action == .takeout {
+            actionStr = " • 포장하시오."
+        }
+        
+        actionLabel.text = actionStr
+        actionLabel.font = UIFont(name: "Jalnan2", size: 22)
+        actionLabel.textAlignment = .left
         
         touchImageView.image = UIImage(named: "touch") // 시스템 이미지 사용 예시
         touchImageView.contentMode = .scaleAspectFit
@@ -81,12 +95,14 @@ class MissionSelectViewController: UIViewController {
         textMission.translatesAutoresizingMaskIntoConstraints = false
         difficultyLabel.translatesAutoresizingMaskIntoConstraints = false
         missionLabel.translatesAutoresizingMaskIntoConstraints = false
+        actionLabel.translatesAutoresizingMaskIntoConstraints = false
         touchImageView.translatesAutoresizingMaskIntoConstraints = false
         instructionLabel.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(textMission)
         view.addSubview(difficultyLabel)
         view.addSubview(missionLabel)
+        view.addSubview(actionLabel)
         view.addSubview(touchImageView)
         view.addSubview(instructionLabel)
         
@@ -106,6 +122,10 @@ class MissionSelectViewController: UIViewController {
             missionLabel.topAnchor.constraint(equalTo: difficultyLabel.bottomAnchor, constant: 60),
             missionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             missionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            actionLabel.topAnchor.constraint(equalTo: missionLabel.bottomAnchor, constant: 20),
+            actionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            actionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
             // touchImageView 제약 조건
             touchImageView.bottomAnchor.constraint(equalTo: instructionLabel.topAnchor, constant: -20),
