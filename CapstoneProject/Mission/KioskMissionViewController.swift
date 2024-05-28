@@ -163,7 +163,7 @@ extension KioskMissionViewController: UICollectionViewDelegateFlowLayout, UIColl
                 performSegue(withIdentifier: "GotoOptionMissionViewController", sender: indexPath)
             }
             else {
-                performSegue(withIdentifier: "GotoFeedBackViewController" , sender: nil)        
+                performSegue(withIdentifier: "GotoFeedBackViewController2" , sender: nil)        
             }
         }
         performSegue(withIdentifier: "GotoOptionMissionViewController", sender: indexPath)

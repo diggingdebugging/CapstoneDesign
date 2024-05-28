@@ -344,7 +344,7 @@
                         <outlet property="collectionView" destination="NOr-Jd-geJ" id="YRR-89-umt"/>
                         <outlet property="tabbar" destination="9cQ-Rf-Avq" id="tZs-aH-piX"/>
                         <outlet property="tableView" destination="h02-sg-owu" id="31V-kU-uij"/>
-                        <segue destination="LJu-Tc-BjF" kind="show" identifier="GotoFeedBackViewController" id="23G-Zc-g7T"/>
+                        <segue destination="LJu-Tc-BjF" kind="show" identifier="GotoFeedBackViewController2" id="23G-Zc-g7T"/>
                         <segue destination="2Ea-dy-U0T" kind="show" identifier="GotoOptionMissionViewController" id="2l4-bt-gGQ"/>
                         <segue destination="6BW-em-oUJ" kind="show" identifier="GotoMissionSuccessViewController" id="4GE-QL-Cka"/>
                     </connections>
@@ -360,41 +360,14 @@
                     <view key="view" contentMode="scaleToFill" id="1pH-g3-xk9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="AIK-IM-TMa">
-                                <rect key="frame" x="139" y="220" width="114" height="197.33333333333337"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retry!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lz7-YS-qVH">
-                                        <rect key="frame" x="0.0" y="0.0" width="114" height="36"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qsq-G8-PFy">
-                                        <rect key="frame" x="0.0" y="80" width="114" height="117.33333333333331"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="다시하기"/>
-                                        <connections>
-                                            <action selector="retryBtn:" destination="LJu-Tc-BjF" eventType="touchUpInside" id="GxC-Se-z51"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ygy-jP-NqR"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Ygy-jP-NqR" firstAttribute="trailing" secondItem="AIK-IM-TMa" secondAttribute="trailing" constant="140" id="8pO-8X-XTr"/>
-                            <constraint firstItem="Ygy-jP-NqR" firstAttribute="bottom" secondItem="AIK-IM-TMa" secondAttribute="bottom" constant="424.67000000000002" id="M7d-kL-0Wg"/>
-                            <constraint firstItem="AIK-IM-TMa" firstAttribute="leading" secondItem="Ygy-jP-NqR" secondAttribute="leading" constant="139" id="l2Q-BT-cYw"/>
-                            <constraint firstItem="AIK-IM-TMa" firstAttribute="top" secondItem="Ygy-jP-NqR" secondAttribute="top" constant="220" id="wji-nn-pHS"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="xG2-5Q-qZL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1g0-ag-pqq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="497" y="-710"/>
+            <point key="canvasLocation" x="497" y="-469"/>
         </scene>
         <!--Option Mission View Controller-->
         <scene sceneID="spu-bv-TXv">
@@ -626,6 +599,7 @@
                         <outletCollection property="optionBtn" destination="hsE-al-jvN" collectionClass="NSMutableArray" id="mm6-vH-VVQ"/>
                         <outletCollection property="optionBtn" destination="l6Y-gI-UDh" collectionClass="NSMutableArray" id="alw-2A-z5K"/>
                         <outletCollection property="optionBtn" destination="hfD-T0-vzI" collectionClass="NSMutableArray" id="ve6-oa-Uim"/>
+                        <segue destination="LJu-Tc-BjF" kind="show" identifier="GotoFeedBackViewController2" id="Erm-JF-iR4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40p-Uy-c6I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -649,6 +623,9 @@
             <point key="canvasLocation" x="-353" y="-77"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Erm-JF-iR4"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="minus" catalog="system" width="128" height="26"/>
         <image name="pencil" catalog="system" width="128" height="113"/>

@@ -22,6 +22,7 @@
 		6ABF01612C061EFD0005A29E /* MissionSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF01602C061EFD0005A29E /* MissionSuccessViewController.swift */; };
 		6ABF01642C06201F0005A29E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6ABF01632C06201F0005A29E /* Lottie */; };
 		6ABF01662C0620380005A29E /* celebration.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF01652C0620380005A29E /* celebration.json */; };
+		6ABF016A2C062CCC0005A29E /* retry2.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF01692C062CCC0005A29E /* retry2.json */; };
 		6AC16E232C0302D200AFBF37 /* DifficultySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC16E222C0302D200AFBF37 /* DifficultySelectViewController.swift */; };
 		6AE0116C2C01C401004FC6B8 /* JJFloatingActionButton in Frameworks */ = {isa = PBXBuildFile; productRef = 6AE0116B2C01C401004FC6B8 /* JJFloatingActionButton */; };
 		FF5330CE2BD0F0E20057A538 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5330CD2BD0F0E20057A538 /* AppDelegate.swift */; };
@@ -52,6 +53,7 @@
 		6AAEFFA02BFECCED009887B7 /* KioskMissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskMissionViewController.swift; sourceTree = "<group>"; };
 		6ABF01602C061EFD0005A29E /* MissionSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionSuccessViewController.swift; sourceTree = "<group>"; };
 		6ABF01652C0620380005A29E /* celebration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = celebration.json; path = ../../../../../Downloads/celebration.json; sourceTree = "<group>"; };
+		6ABF01692C062CCC0005A29E /* retry2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = retry2.json; sourceTree = "<group>"; };
 		6AC16E222C0302D200AFBF37 /* DifficultySelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultySelectViewController.swift; sourceTree = "<group>"; };
 		FF5330CA2BD0F0E20057A538 /* CapstoneProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapstoneProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF5330CD2BD0F0E20057A538 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		6AAEFF9A2BFEC6D2009887B7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				6ABF01692C062CCC0005A29E /* retry2.json */,
 				6ABF01652C0620380005A29E /* celebration.json */,
 				6A8A83FE2BFDF7E700AA75CA /* MissionData.swift */,
 				FF5330E72BD124220057A538 /* FoodData.swift */,
@@ -244,6 +247,7 @@
 				6A636FF02C04965100A76F35 /* Jalnan2.otf in Resources */,
 				FF5330E42BD0F4930057A538 /* Kiosk.storyboard in Resources */,
 				FF5330D72BD0F0E40057A538 /* Assets.xcassets in Resources */,
+				6ABF016A2C062CCC0005A29E /* retry2.json in Resources */,
 				6ABF01662C0620380005A29E /* celebration.json in Resources */,
 				FF5330DA2BD0F0E40057A538 /* Base in Resources */,
 				6AAEFF9E2BFEC9A3009887B7 /* Mission.storyboard in Resources */,
