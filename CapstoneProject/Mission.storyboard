@@ -379,7 +379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1g0-ag-pqq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="415" y="-557"/>
+            <point key="canvasLocation" x="497" y="-710"/>
         </scene>
         <!--Option Mission View Controller-->
         <scene sceneID="spu-bv-TXv">
@@ -615,7 +615,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40p-Uy-c6I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="415" y="-1287"/>
+            <point key="canvasLocation" x="497" y="-1419"/>
         </scene>
     </scenes>
     <resources>
