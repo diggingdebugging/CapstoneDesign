@@ -734,6 +734,27 @@
             </objects>
             <point key="canvasLocation" x="-210" y="-104"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="8sh-hF-61u">
+            <objects>
+                <viewController id="fAD-AY-gyC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="02Y-73-Hqy">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="door.left.hand.open" catalog="system" highlightedImage="abcs.gif" translatesAutoresizingMaskIntoConstraints="NO" id="W4P-Nl-Bka">
+                                <rect key="frame" x="153" y="268" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aX0-Db-PXz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v4T-HS-mXR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1444" y="-1908"/>
+        </scene>
         <!--Mission Replay View Controller-->
         <scene sceneID="h7K-uO-0OL">
             <objects>
@@ -752,10 +773,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="f1g-Bo-7zb"/>
+        <segue reference="4GE-QL-Cka"/>
         <segue reference="23G-Zc-g7T"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="abcs.gif" width="768" height="244"/>
+        <image name="door.left.hand.open" catalog="system" width="108" height="128"/>
         <image name="minus" catalog="system" width="128" height="26"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="plus" catalog="system" width="128" height="113"/>

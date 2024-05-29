@@ -130,9 +130,18 @@ extension KioskMissionViewController{ // tabBar, collectionView UI,
     
     func setupActionButton(){
         let actionButton = JJFloatingActionButton()
-        actionButton.addTarget(self, action: #selector(actionButtonTouched), for: .touchUpInside)
         actionButton.buttonColor = UIColor(hexCode: "143875")
         actionButton.buttonImage = UIImage(systemName: "questionmark")
+        
+        actionButton.addItem(title: "처음으로", image: UIImage(systemName: "door.left.hand.open")) { item in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true)
+        }
+        actionButton.addItem(title: "미션보기", image: UIImage(systemName: "doc.text")) { _ in
+            self.performSegue(withIdentifier: "GotoMissionReplayViewController", sender: self.mission)
+        }
         view.addSubview(actionButton)
         
         // 오토레이아웃 설정
@@ -144,10 +153,6 @@ extension KioskMissionViewController{ // tabBar, collectionView UI,
         
         // 최상위 레이어로 버튼을 이동
         view.bringSubviewToFront(actionButton)
-    }
-    
-    @objc func actionButtonTouched(){
-       performSegue(withIdentifier:"GotoMissionReplayViewController" , sender: mission)
     }
 }
 
@@ -195,7 +200,7 @@ extension KioskMissionViewController: UICollectionViewDelegateFlowLayout, UIColl
                 performSegue(withIdentifier: "GotoOptionMissionViewController", sender: indexPath)
             }
             else {
-                performSegue(withIdentifier: "GotoFeedBackViewController2" , sender: nil)
+                performSegue(withIdentifier: "GotoFeedBackViewController" , sender: nil)
             }
         }
         performSegue(withIdentifier: "GotoOptionMissionViewController", sender: indexPath)

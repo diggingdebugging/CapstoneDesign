@@ -89,7 +89,7 @@ extension SelectionMissionViewController{ // Button EventHandlers
     }
     
     @objc func cancelButtonClicked(sender: UIButton){
-        self.dismiss(animated: true, completion: nil)
+        
     }
 }
 
