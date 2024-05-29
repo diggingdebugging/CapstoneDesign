@@ -7,13 +7,12 @@
 
 import UIKit
 
-class MissionSelectViewController: UIViewController {
+class MissionReplayViewController: UIViewController {
     var missionLabel = UILabel()
     var textMission = UILabel()
     var difficultyLabel = UILabel()
     var actionLabel = UILabel()
-    var instructionLabel = UILabel()
-    var touchImageView = UIImageView()
+    var backView = UIView()
     
     var foodList: [Food]?
     var mission: Mission?
@@ -25,8 +24,7 @@ class MissionSelectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        
-        
+                
         // missionLabel gesture달기
         view.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goMisson))
@@ -34,24 +32,14 @@ class MissionSelectViewController: UIViewController {
     }
     
     func setUI(){
-//        if mission?.difficulty == .basic{
-//            textMission.text = "📝미션 [기본]"
-//        }
-//        if mission?.difficulty == .difficult{
-//            textMission.text = "📝미션 [어려움]"
-//        }
+        view.backgroundColor = .clear
         textMission.text = "BUDDY MISSION"
         textMission.font = UIFont(descriptor: UIFontDescriptor(name: "American Typewriter", size: 38).withSymbolicTraits(.traitBold)!, size: 38)
         textMission.textAlignment = .center
         textMission.backgroundColor = UIColor(hexCode: "143785")
         textMission.textColor = UIColor.white
         
-        if mission?.difficulty == .basic{
-            difficultyLabel.text = "[기본]"
-        }
-        if mission?.difficulty == .difficult{
-            difficultyLabel.text = "[어려움]"
-        }
+        difficultyLabel.text = "[다시보기]"
         difficultyLabel.font = UIFont(name: "Jalnan2", size: 30)
         difficultyLabel.textAlignment = .center
         difficultyLabel.textColor = UIColor(hexCode: "143785")
@@ -84,59 +72,46 @@ class MissionSelectViewController: UIViewController {
         actionLabel.font = UIFont(name: "Jalnan2", size: 22)
         actionLabel.textAlignment = .left
         
-        touchImageView.image = UIImage(named: "touch") // 시스템 이미지 사용 예시
-        touchImageView.contentMode = .scaleAspectFit
-        
-        instructionLabel.text = "다음 뷰로 넘어가려면 화면을 터치하세요"
-        instructionLabel.font = UIFont.systemFont(ofSize: 20)
-        instructionLabel.textAlignment = .center
-        instructionLabel.textColor = .gray
+        backView.backgroundColor = .white
+        backView.layer.cornerRadius = 40
         
         textMission.translatesAutoresizingMaskIntoConstraints = false
         difficultyLabel.translatesAutoresizingMaskIntoConstraints = false
         missionLabel.translatesAutoresizingMaskIntoConstraints = false
         actionLabel.translatesAutoresizingMaskIntoConstraints = false
-        touchImageView.translatesAutoresizingMaskIntoConstraints = false
-        instructionLabel.translatesAutoresizingMaskIntoConstraints = false
+        backView.translatesAutoresizingMaskIntoConstraints = false
         
-        view.addSubview(textMission)
-        view.addSubview(difficultyLabel)
-        view.addSubview(missionLabel)
-        view.addSubview(actionLabel)
-        view.addSubview(touchImageView)
-        view.addSubview(instructionLabel)
+        backView.addSubview(textMission)
+        backView.addSubview(difficultyLabel)
+        backView.addSubview(missionLabel)
+        backView.addSubview(actionLabel)
         
+        view.addSubview(backView)
         
         // 오토레이아웃 설정
         NSLayoutConstraint.activate([
             // 첫 번째 레이블 제약 조건
-            textMission.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            textMission.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            textMission.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            textMission.topAnchor.constraint(equalTo: backView.topAnchor, constant: 0),
+            textMission.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: 0),
+            textMission.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: 0),
             
             difficultyLabel.topAnchor.constraint(equalTo: textMission.bottomAnchor, constant: 20),
-            difficultyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            difficultyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            difficultyLabel.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: 20),
+            difficultyLabel.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -20),
             
             // 두 번째 레이블 제약 조건
             missionLabel.topAnchor.constraint(equalTo: difficultyLabel.bottomAnchor, constant: 60),
-            missionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            missionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            missionLabel.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: 20),
+            missionLabel.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -20),
             
             actionLabel.topAnchor.constraint(equalTo: missionLabel.bottomAnchor, constant: 20),
-            actionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            actionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            actionLabel.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: 20),
+            actionLabel.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -20),
             
-            // touchImageView 제약 조건
-            touchImageView.bottomAnchor.constraint(equalTo: instructionLabel.topAnchor, constant: -20),
-            touchImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            touchImageView.widthAnchor.constraint(equalToConstant: 130),
-            touchImageView.heightAnchor.constraint(equalToConstant: 130),
-            
-            // instructionLabel 제약 조건
-            instructionLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
-            instructionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            instructionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            backView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            backView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -180),
+            backView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         
     }
@@ -181,25 +156,8 @@ class MissionSelectViewController: UIViewController {
     }
     
     @objc func goMisson(_ sender: UILabel) { // 아메리카노, 차가움, 기본, 결제하기버튼누르기, 포장하기버튼 누르기
-        performSegue(withIdentifier:"GotoKioskMissionViewController" , sender: mission)
-        //        let storyboard = UIStoryboard(name: "Mission", bundle: nil)
-        //        let vc = storyboard.instantiateViewController(withIdentifier: "KioskMissionViewController") as! KioskMissionViewController
-        //        vc.modalPresentationStyle = .fullScreen
-        //        present(vc, animated: true)
+        dismiss(animated: true)
     }
 }
-
-extension MissionSelectViewController{
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? KioskMissionViewController {
-            vc.mission = sender as? Mission
-            vc.modalPresentationStyle = .fullScreen
-        }
-        
-    }
-}
-
-
-
 
 

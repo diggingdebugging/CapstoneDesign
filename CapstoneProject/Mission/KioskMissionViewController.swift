@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JJFloatingActionButton
 
 class KioskMissionViewController: UIViewController {
     
@@ -34,13 +35,15 @@ class KioskMissionViewController: UIViewController {
         
         setupTabBar()
         setupCollectionView()
+        setupActionButton()
+        
     }
     
     @IBAction func calcButton(_ sender: UIButton) { // 계산하기 버튼
         if mission?.difficulty == .difficult {
             prepareAnswer()
             if rightAnswer {
-                print("성공")
+                performSegue(withIdentifier: "GotoSelectionMissionVIewController", sender: mission)
             }
             else if rightAnswer == false {
                 performSegue(withIdentifier: "GotoFeedBackViewController", sender: nil)
@@ -50,6 +53,8 @@ class KioskMissionViewController: UIViewController {
         if mission?.difficulty == .basic {
             performSegue(withIdentifier: "GotoSelectionMissionVIewController", sender: mission)
         }
+        
+        
         
         totalPrice = foodStateList.reduce(0) { $0 + $1.totalPrice }
         //performSegue(withIdentifier: "GoToSelectionViewController", sender: totalPrice)
@@ -80,7 +85,7 @@ class KioskMissionViewController: UIViewController {
         
     }
 }
-extension KioskMissionViewController{ // tabBar, collectionView UI
+extension KioskMissionViewController{ // tabBar, collectionView UI,
     // TabBar UI
     func setupTabBar() {
         // 기본 텍스트 속성
@@ -122,6 +127,28 @@ extension KioskMissionViewController{ // tabBar, collectionView UI
         
         collectionView.contentInset = UIEdgeInsets(top: 20, left: 16, bottom: 0, right: 16)
     }
+    
+    func setupActionButton(){
+        let actionButton = JJFloatingActionButton()
+        actionButton.addTarget(self, action: #selector(actionButtonTouched), for: .touchUpInside)
+        actionButton.buttonColor = UIColor(hexCode: "143875")
+        actionButton.buttonImage = UIImage(systemName: "questionmark")
+        view.addSubview(actionButton)
+        
+        // 오토레이아웃 설정
+        actionButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            actionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            actionButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -220)
+        ])
+        
+        // 최상위 레이어로 버튼을 이동
+        view.bringSubviewToFront(actionButton)
+    }
+    
+    @objc func actionButtonTouched(){
+       performSegue(withIdentifier:"GotoMissionReplayViewController" , sender: mission)
+    }
 }
 
 extension KioskMissionViewController: UICollectionViewDataSource { // CollectionView DataSource
@@ -153,7 +180,7 @@ extension KioskMissionViewController: UICollectionViewDelegateFlowLayout, UIColl
         return CGSize(width: width, height: height)
         
     }
-        
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
@@ -168,7 +195,7 @@ extension KioskMissionViewController: UICollectionViewDelegateFlowLayout, UIColl
                 performSegue(withIdentifier: "GotoOptionMissionViewController", sender: indexPath)
             }
             else {
-                performSegue(withIdentifier: "GotoFeedBackViewController2" , sender: nil)        
+                performSegue(withIdentifier: "GotoFeedBackViewController2" , sender: nil)
             }
         }
         performSegue(withIdentifier: "GotoOptionMissionViewController", sender: indexPath)
@@ -186,7 +213,10 @@ extension KioskMissionViewController{ // prepare, performSegue호출되면 호�
         if let vc = segue.destination as? SelectionMissionViewController{
             vc.mission = sender as? Mission
         }
-
+        
+        if let vc = segue.destination as? MissionReplayViewController{
+            vc.mission = sender as? Mission
+        }
     }
 }
 
@@ -240,7 +270,7 @@ extension KioskMissionViewController: UITableViewDelegate, UITableViewDataSource
         }
         // cell의 optionPrice
         cell.optionOnePriceLabel.text = String(foodState.optionPrice)
-                
+        
         return cell
     }
     

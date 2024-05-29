@@ -36,6 +36,7 @@ class KioskViewController: UIViewController {
     @IBAction func calcButton(_ sender: UIButton) { // 계산하기 버튼
         totalPrice = foodStateList.reduce(0) { $0 + $1.totalPrice }
         performSegue(withIdentifier: "GoToSelectionViewController", sender: totalPrice)
+        print("1")
     }
     
 }

@@ -344,10 +344,11 @@
                         <outlet property="collectionView" destination="NOr-Jd-geJ" id="YRR-89-umt"/>
                         <outlet property="tabbar" destination="9cQ-Rf-Avq" id="tZs-aH-piX"/>
                         <outlet property="tableView" destination="h02-sg-owu" id="31V-kU-uij"/>
-                        <segue destination="LJu-Tc-BjF" kind="show" identifier="GotoFeedBackViewController2" id="23G-Zc-g7T"/>
+                        <segue destination="LJu-Tc-BjF" kind="show" identifier="GotoFeedBackViewController" id="23G-Zc-g7T"/>
                         <segue destination="2Ea-dy-U0T" kind="show" identifier="GotoOptionMissionViewController" id="2l4-bt-gGQ"/>
                         <segue destination="6BW-em-oUJ" kind="show" identifier="GotoMissionSuccessViewController" id="4GE-QL-Cka"/>
                         <segue destination="xeJ-Jw-Ljz" kind="show" identifier="GotoSelectionMissionVIewController" id="1uS-zK-IYs"/>
+                        <segue destination="26Q-tf-PlC" kind="show" identifier="GotoMissionReplayViewController" id="Hy1-zp-jxT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kU3-RW-WDA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -605,7 +606,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40p-Uy-c6I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="497" y="-1419"/>
+            <point key="canvasLocation" x="839" y="-1435"/>
         </scene>
         <!--Mission Success View Controller-->
         <scene sceneID="mQF-3E-f7O">
@@ -621,7 +622,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eu5-5j-r8E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1402" y="44"/>
+            <point key="canvasLocation" x="-1156" y="-103"/>
         </scene>
         <!--Selection Mission View Controller-->
         <scene sceneID="7DJ-NG-edt">
@@ -650,7 +651,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="156.66666666666666" height="220.66666666666666"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="먹고가기"/>
+                                                        <state key="normal" title="매장이용"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUs-VK-7rv">
                                                         <rect key="frame" x="0.0" y="240.66666666666669" width="156.66666666666666" height="55"/>
@@ -731,12 +732,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ed-AU-daz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28" y="-9"/>
+            <point key="canvasLocation" x="-210" y="-104"/>
+        </scene>
+        <!--Mission Replay View Controller-->
+        <scene sceneID="h7K-uO-0OL">
+            <objects>
+                <viewController id="26Q-tf-PlC" customClass="MissionReplayViewController" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="psj-b0-FAZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="KDM-Rr-3nu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hvI-mG-G0y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m7T-IR-t8U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100" y="-1789"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="f1g-Bo-7zb"/>
-        <segue reference="FIo-ij-9DK"/>
+        <segue reference="23G-Zc-g7T"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="minus" catalog="system" width="128" height="26"/>
