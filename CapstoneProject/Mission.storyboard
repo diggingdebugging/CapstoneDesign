@@ -636,7 +636,7 @@
                                 <rect key="frame" x="10" y="230" width="373" height="382"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장소를 선택해주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJO-MW-JNx">
-                                        <rect key="frame" x="100" y="20" width="176" height="26.333333333333329"/>
+                                        <rect key="frame" x="80" y="20" width="213" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -683,13 +683,13 @@
                                 <constraints>
                                     <constraint firstItem="rHD-GC-YTb" firstAttribute="leading" secondItem="VwK-KU-weL" secondAttribute="leading" constant="40" id="4mu-n2-ypC"/>
                                     <constraint firstItem="vJO-MW-JNx" firstAttribute="top" secondItem="VwK-KU-weL" secondAttribute="top" constant="20" id="5vz-vT-wxz"/>
-                                    <constraint firstAttribute="trailing" secondItem="vJO-MW-JNx" secondAttribute="trailing" constant="97" id="DWF-6M-yUo"/>
+                                    <constraint firstAttribute="trailing" secondItem="vJO-MW-JNx" secondAttribute="trailing" constant="80" id="DWF-6M-yUo"/>
                                     <constraint firstItem="OVu-b3-sgo" firstAttribute="top" secondItem="vJO-MW-JNx" secondAttribute="bottom" constant="30" id="Hyo-Le-0LH"/>
                                     <constraint firstAttribute="trailing" secondItem="rHD-GC-YTb" secondAttribute="trailing" constant="40" id="Rba-su-4Be"/>
                                     <constraint firstAttribute="trailing" secondItem="OVu-b3-sgo" secondAttribute="trailing" constant="40" id="T15-ED-nGH"/>
                                     <constraint firstItem="OVu-b3-sgo" firstAttribute="leading" secondItem="VwK-KU-weL" secondAttribute="leading" constant="40" id="Y7M-zR-8fz"/>
                                     <constraint firstItem="rHD-GC-YTb" firstAttribute="top" secondItem="OVu-b3-sgo" secondAttribute="bottom" constant="20" id="lWv-Y5-7WR"/>
-                                    <constraint firstItem="vJO-MW-JNx" firstAttribute="leading" secondItem="VwK-KU-weL" secondAttribute="leading" constant="100" id="zCn-XL-Ovf"/>
+                                    <constraint firstItem="vJO-MW-JNx" firstAttribute="leading" secondItem="VwK-KU-weL" secondAttribute="leading" constant="80" id="zCn-XL-Ovf"/>
                                 </constraints>
                             </view>
                         </subviews>
