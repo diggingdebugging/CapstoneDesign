@@ -41,8 +41,9 @@ class KioskMissionViewController: UIViewController {
     
     @IBAction func calcButton(_ sender: UIButton) { // 계산하기 버튼
         if mission?.difficulty == .difficult {
-            prepareAnswer()
+            compareAnswer()
             if rightAnswer {
+                rightAnswer = false
                 performSegue(withIdentifier: "GotoSelectionMissionVIewController", sender: mission)
             }
             else if rightAnswer == false {
@@ -60,24 +61,28 @@ class KioskMissionViewController: UIViewController {
         //performSegue(withIdentifier: "GoToSelectionViewController", sender: totalPrice)
     }
     
-    func prepareAnswer(){ // 정답비교
+    func compareAnswer(){ // 정답비교
         var count = 0
-        if mission?.answers.count != foodStateList.count {
+        var compareStateList = foodStateList
+        if mission?.answers.count != compareStateList.count {
             return
         }
+        
         for i in 0..<3 {
             // 역순으로 순회하면서 요소 제거
-            for j in (0..<foodStateList.count).reversed() {
-                if mission?.answers[i].selectDrink?.name == foodStateList[j].food.name {
-                    if mission?.answers[i].selectHotOrDrink == foodStateList[j].hotOrCold {
-                        if mission?.answers[i].selectDensity == foodStateList[j].density {
+            for j in (0..<compareStateList.count).reversed() {
+                if mission?.answers[i].selectDrink?.name == compareStateList[j].food.name {
+                    if mission?.answers[i].selectHotOrDrink == compareStateList[j].hotOrCold {
+                        if mission?.answers[i].selectDensity == compareStateList[j].density {
                             count += 1
-                            foodStateList.remove(at: j)
+                            compareStateList.remove(at: j)
                         }
                     }
                 }
             }
         }
+        
+        print("Final compareStateList after comparison: \(compareStateList)")
         
         if count == 3 {
             rightAnswer = true
@@ -134,10 +139,7 @@ extension KioskMissionViewController{ // tabBar, collectionView UI,
         actionButton.buttonImage = UIImage(systemName: "questionmark")
         
         actionButton.addItem(title: "처음으로", image: UIImage(systemName: "door.left.hand.open")) { item in
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true)
+            self.showAlert(title: "처음으로 가시겠습니까?", message:"해당 미션은 사라집니다.")
         }
         actionButton.addItem(title: "미션보기", image: UIImage(systemName: "doc.text")) { _ in
             self.performSegue(withIdentifier: "GotoMissionReplayViewController", sender: self.mission)
@@ -323,6 +325,22 @@ extension KioskMissionViewController: UITabBarDelegate { // TabBar Delegate
     }
 }
 
+extension KioskMissionViewController {
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "예", style: .default) { _ in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "아니오", style: .default, handler: nil)
+        
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
 
 
 
