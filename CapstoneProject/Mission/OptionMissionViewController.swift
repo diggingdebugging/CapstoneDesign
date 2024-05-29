@@ -45,10 +45,13 @@ class OptionMissionViewController: UIViewController {
                 selectedFood = Coffee.list[foodIndex]
             case .AdeAndTea :
                 selectedFood = AdeAndTea.list[foodIndex]
+                buttonSetting()
             case .Drink :
                 selectedFood = Drink.list[foodIndex]
+                buttonSetting()
             case .Desert :
                 selectedFood = Desert.list[foodIndex]
+                buttonSetting()
             default :
                 break
             }
@@ -56,7 +59,15 @@ class OptionMissionViewController: UIViewController {
             priceLabel.text = String(selectedFood.price)
             optionImage.image = UIImage(named: selectedFood.imageName)
         }
-        
+    }
+    
+    func buttonSetting(){
+        hotOrColdBtn[1].isSelected = true
+        optionBtn[0].isSelected = true
+        hotOrColdBtn[0].isEnabled = false
+        optionBtn[1].isEnabled = false
+        optionBtn[2].isEnabled = false
+        optionBtn[3].isEnabled = false
     }
     
     func setupUI(){
