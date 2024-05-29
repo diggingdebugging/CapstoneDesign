@@ -8,6 +8,9 @@
 import UIKit
 
 class DifficultySelectViewController: UIViewController {
+    let titleLabel = UILabel()
+    let basicDescriptionLabel = UILabel()
+    let difficultDescriptionLabel = UILabel()
     
     let basicButton = UIButton()
     let difficultButton = UIButton()
@@ -35,36 +38,70 @@ class DifficultySelectViewController: UIViewController {
     }
     
     func getUI(){
+        titleLabel.text = "난이도 선택"
+        titleLabel.font = UIFont(name: "Jalnan2", size: 35)
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = .black
+        
         basicButton.setTitle("기본", for: .normal)
         basicButton.layer.cornerRadius = 10
-        basicButton.backgroundColor = .systemBlue // 버튼의 배경색 설정
-        basicButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        basicButton.backgroundColor = UIColor(hexCode: "143785")
+        basicButton.titleLabel?.font = UIFont(name: "Jalnan2", size: 25)
+        
+        basicDescriptionLabel.text = "메뉴 1개 주문"
+        basicDescriptionLabel.font = UIFont(name: "Jalnan2", size:  20)
+        basicDescriptionLabel.textAlignment = .center
+        basicDescriptionLabel.textColor = .black
         
         difficultButton.setTitle("어려움", for: .normal)
         difficultButton.layer.cornerRadius = 10
-        difficultButton.backgroundColor = .systemBlue // 버튼의 배경색 설정
-        difficultButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        difficultButton.backgroundColor = UIColor(hexCode: "143785") // 버튼의 배경색 설정
+        difficultButton.titleLabel?.font = UIFont(name: "Jalnan2", size: 25)
         
-        let stackView = UIStackView()
-        stackView.addArrangedSubview(basicButton)
-        stackView.addArrangedSubview(difficultButton)
-        stackView.spacing = 30
-        stackView.axis = .vertical        
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .fillEqually
+        difficultDescriptionLabel.text = "메뉴 3개 주문"
+        difficultDescriptionLabel.font = UIFont(name: "Jalnan2", size: 20   )
+        difficultDescriptionLabel.textAlignment = .center
+        difficultDescriptionLabel.textColor = .black
+                
+        view.addSubview(titleLabel)
+        view.addSubview(basicButton)
+        view.addSubview(basicDescriptionLabel)
+        view.addSubview(difficultButton)
+        view.addSubview(difficultDescriptionLabel)
         
-        view.addSubview(stackView)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        basicButton.translatesAutoresizingMaskIntoConstraints = false
+        basicDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        difficultButton.translatesAutoresizingMaskIntoConstraints = false
+        difficultDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 170),
-            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -170),
-            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 100),
-            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -100),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            
+            basicButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 100),
+            basicButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            basicButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            basicButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            basicDescriptionLabel.topAnchor.constraint(equalTo: basicButton.bottomAnchor, constant: 20),
+            basicDescriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            basicDescriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+                        
+            difficultButton.topAnchor.constraint(equalTo: basicDescriptionLabel.bottomAnchor, constant: 80),
+            difficultButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            difficultButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            difficultButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            difficultDescriptionLabel.topAnchor.constraint(equalTo: difficultButton.bottomAnchor, constant: 20),
+            difficultDescriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            difficultDescriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
+            
         ])
-        
     }
     
-
+    
     func makeBasicMission(){ // 기본 미션, 기본미션은 클릭즉시 리액션이옴..., 미션은 커피종류만, 1잔으로
         addCoffeeList()
         // 기본미션에 렌덤생성
@@ -101,13 +138,13 @@ class DifficultySelectViewController: UIViewController {
                 randomHotOrCold = HotOrCold.allCases.randomElement()
                 randomDensity = Density.allCases.randomElement()
             }
-           
+            
             let answer = Answer(selectDrink: randomDrink, selectHotOrDrink: randomHotOrCold, selectDensity: randomDensity) // answer생성
             answers.append(answer)
         }
         
         let randomAction = Action.allCases.randomElement()
-        mission = Mission(difficulty: .difficult, answers: answers, action: randomAction) // mission 생성        
+        mission = Mission(difficulty: .difficult, answers: answers, action: randomAction) // mission 생성
     }
     
     func addFoodList(){
@@ -130,12 +167,12 @@ class DifficultySelectViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if segue.identifier == "GotoMissionSelectViewController" {
-               if let missionSelectViewController = segue.destination as? MissionSelectViewController {
-                   missionSelectViewController.mission = sender as? Mission
-                   missionSelectViewController.modalPresentationStyle = .fullScreen
-               }
-           }
-       }
-
+        if segue.identifier == "GotoMissionSelectViewController" {
+            if let missionSelectViewController = segue.destination as? MissionSelectViewController {
+                missionSelectViewController.mission = sender as? Mission
+                missionSelectViewController.modalPresentationStyle = .fullScreen
+            }
+        }
+    }
+    
 }

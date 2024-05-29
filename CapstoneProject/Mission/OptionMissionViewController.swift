@@ -152,12 +152,6 @@ class OptionMissionViewController: UIViewController {
                 optionindex = optionBtn.firstIndex(of: sender)
                 optionSelect()
                 
-                //버튼 선택이 완료되면 색깔 바꾸기
-                
-                if hotcoldindex != nil {
-                    addBtn.backgroundColor = .orange
-                }
-                
             }else{
                 sender.isSelected = false
                 optionindex = nil
@@ -242,10 +236,10 @@ extension OptionMissionViewController{ // snackbar code
         attributes.entranceAnimation = .init(translate: .init(duration: 0.3, anchorPosition: .top))
         attributes.exitAnimation = .init(translate: .init(duration: 0.2, anchorPosition: .top))
         attributes.displayDuration = duration
-        let defaultButtonColor =  EKColor(UIColor.systemBlue)
+        let defaultButtonColor =  EKColor(UIColor(hexCode: "FF7F00"))
 
-        let title = EKProperty.LabelContent(text: message, style: .init(font: .systemFont(ofSize: 16), color: defaultButtonColor, alignment: .center))
-        let descriptionContent = EKProperty.LabelContent(text: description ?? "", style: .init(font: .systemFont(ofSize: 14), color: .white))
+        let title = EKProperty.LabelContent(text: message, style: .init(font: .boldSystemFont(ofSize: 18), color: defaultButtonColor, alignment: .center))
+        let descriptionContent = EKProperty.LabelContent(text: description ?? "", style: .init(font: .boldSystemFont(ofSize: 14), color: .white))
         
         let simpleMessage = EKSimpleMessage(title: title, description: descriptionContent)
         let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)
