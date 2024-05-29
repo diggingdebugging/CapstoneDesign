@@ -128,23 +128,42 @@ class DifficultySelectViewController: UIViewController {
     func makeDifficultMission(){ // 어려운 미션, 결제하기 버튼을 눌러야 결과를 알 수 있음..., 미션은 모든 음료 종류포함, 여러잔 가능, 커피를 제외한 음료와 디저트는 옵션없이 생성해야함
         addFoodList()
         
-        for _ in 1...3 {
-            let randomDrink = foodList?.randomElement()
-            
-            randomHotOrCold = nil
-            randomDensity = nil
+        var randomDrink = foodList?.randomElement()
+        randomHotOrCold = nil
+        randomDensity = nil
+        
+        if randomDrink as? Coffee != nil { // Coffee로 캐스팅이되면
+            randomHotOrCold = HotOrCold.allCases.randomElement()
+            randomDensity = Density.allCases.randomElement()
+        }
+        
+        let answer = Answer(selectDrink: randomDrink, selectHotOrDrink: randomHotOrCold, selectDensity: randomDensity) // answer생성
+        answers.append(answer)
+        
+        // 재시동
+        randomDrink = foodList?.randomElement()
+        for i in 0...1 {
+            while answers[i].selectDrink?.name == randomDrink?.name {
+                randomDrink = foodList?.randomElement()
+            }
             
             if randomDrink as? Coffee != nil { // Coffee로 캐스팅이되면
                 randomHotOrCold = HotOrCold.allCases.randomElement()
                 randomDensity = Density.allCases.randomElement()
+            } else {
+                randomHotOrCold = nil
+                randomDensity = nil                
             }
-            
             let answer = Answer(selectDrink: randomDrink, selectHotOrDrink: randomHotOrCold, selectDensity: randomDensity) // answer생성
             answers.append(answer)
         }
         
         let randomAction = Action.allCases.randomElement()
         mission = Mission(difficulty: .difficult, answers: answers, action: randomAction) // mission 생성
+    }
+    
+    func randomAnswer() {
+        
     }
     
     func addFoodList(){
