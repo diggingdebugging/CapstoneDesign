@@ -20,6 +20,8 @@ class MainViewController: UIViewController {
     func setupUI(){
         missionButton.backgroundColor = UIColor(hexCode: "143875")
         practiceButton.backgroundColor = UIColor(hexCode: "143875")
+        missionButton.layer.cornerRadius = 10
+        practiceButton.layer.cornerRadius = 10
     }
     
     //클릭시 Kiosk로 이동

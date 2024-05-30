@@ -38,10 +38,13 @@ class OptionViewController: UIViewController {
                 selectedFood = Coffee.list[foodIndex]
             case .AdeAndTea :
                 selectedFood = AdeAndTea.list[foodIndex]
+                buttonSetting()
             case .Drink :
                 selectedFood = Drink.list[foodIndex]
+                buttonSetting()
             case .Desert :
                 selectedFood = Desert.list[foodIndex]
+                buttonSetting()
             default :
                 break
             }
@@ -49,6 +52,15 @@ class OptionViewController: UIViewController {
             priceLabel.text = String(selectedFood.price)
             optionlmage.image = UIImage(named: selectedFood.imageName)
         }
+    }
+        
+    func buttonSetting(){ // cold, basic
+        hotcoldbtn[1].isSelected = true
+        optionbtn[0].isSelected = true
+        hotcoldbtn[0].isEnabled = false
+        optionbtn[1].isEnabled = false
+        optionbtn[2].isEnabled = false
+        optionbtn[3].isEnabled = false
     }
     
     @IBAction func addbtn(_ sender: UIButton) { //담기버튼

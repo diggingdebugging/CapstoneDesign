@@ -15,6 +15,9 @@ class MissionSuccessViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         goHomeButton.addTarget(self, action: #selector(buttonTouched), for: .touchUpInside)
+        
+        // 화면내리기 막기
+        isModalInPresentation = true
     }
 
     func setupUI() {

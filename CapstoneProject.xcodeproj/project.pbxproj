@@ -27,6 +27,7 @@
 		6ABF016C2C06337D0005A29E /* SelectionMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF016B2C06337D0005A29E /* SelectionMissionViewController.swift */; };
 		6AC16E232C0302D200AFBF37 /* DifficultySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC16E222C0302D200AFBF37 /* DifficultySelectViewController.swift */; };
 		6AE0116C2C01C401004FC6B8 /* JJFloatingActionButton in Frameworks */ = {isa = PBXBuildFile; productRef = 6AE0116B2C01C401004FC6B8 /* JJFloatingActionButton */; };
+		6AFE117A2C0873F000853022 /* celebration.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AFE11792C0873F000853022 /* celebration.json */; };
 		FF5330CE2BD0F0E20057A538 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5330CD2BD0F0E20057A538 /* AppDelegate.swift */; };
 		FF5330D02BD0F0E20057A538 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5330CF2BD0F0E20057A538 /* SceneDelegate.swift */; };
 		FF5330D52BD0F0E20057A538 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FF5330D42BD0F0E20057A538 /* Base */; };
@@ -37,9 +38,7 @@
 		FF5330E62BD0F7860057A538 /* KioskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5330E52BD0F7860057A538 /* KioskViewController.swift */; };
 		FF5330E82BD124220057A538 /* FoodData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5330E72BD124220057A538 /* FoodData.swift */; };
 		FF5330EA2BD1261B0057A538 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5330E92BD1261B0057A538 /* FoodCell.swift */; };
-		FF5D66872C083852008B876A /* celebration.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5D66862C083852008B876A /* celebration.json */; };
 		FFE659302BEE70540021917A /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE6592F2BEE70540021917A /* OptionCell.swift */; };
-		FFFD515C2C01E8E300033F22 /* NewOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFD515B2C01E8E300033F22 /* NewOptionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +59,7 @@
 		6ABF01692C062CCC0005A29E /* retry2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = retry2.json; sourceTree = "<group>"; };
 		6ABF016B2C06337D0005A29E /* SelectionMissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionMissionViewController.swift; sourceTree = "<group>"; };
 		6AC16E222C0302D200AFBF37 /* DifficultySelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultySelectViewController.swift; sourceTree = "<group>"; };
+		6AFE11792C0873F000853022 /* celebration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = celebration.json; path = ../../../../../Downloads/celebration.json; sourceTree = "<group>"; };
 		FF5330CA2BD0F0E20057A538 /* CapstoneProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapstoneProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF5330CD2BD0F0E20057A538 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF5330CF2BD0F0E20057A538 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,9 +72,7 @@
 		FF5330E52BD0F7860057A538 /* KioskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskViewController.swift; sourceTree = "<group>"; };
 		FF5330E72BD124220057A538 /* FoodData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodData.swift; sourceTree = "<group>"; };
 		FF5330E92BD1261B0057A538 /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
-		FF5D66862C083852008B876A /* celebration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = celebration.json; path = ../../../../Downloads/celebration.json; sourceTree = "<group>"; };
 		FFE6592F2BEE70540021917A /* OptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
-		FFFD515B2C01E8E300033F22 /* NewOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOptionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				6ABF01692C062CCC0005A29E /* retry2.json */,
-				FF5D66862C083852008B876A /* celebration.json */,
+				6AFE11792C0873F000853022 /* celebration.json */,
 				6A8A83FE2BFDF7E700AA75CA /* MissionData.swift */,
 				FF5330E72BD124220057A538 /* FoodData.swift */,
 				6AA002012C06EF8300218285 /* SystemData.swift */,
@@ -124,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				FF5330E52BD0F7860057A538 /* KioskViewController.swift */,
-				FFFD515B2C01E8E300033F22 /* NewOptionViewController.swift */,
 				6A33F74C2BECDEE7000DD7BD /* OptionViewController.swift */,
 				6A6807CA2BDCF5B800949018 /* SelectionViewController.swift */,
 				6A6A00782BDF95C90082245A /* PayViewController.swift */,
@@ -167,13 +164,13 @@
 		FF5330CC2BD0F0E20057A538 /* CapstoneProject */ = {
 			isa = PBXGroup;
 			children = (
-				6A636FEE2C04963500A76F35 /* Font */,
 				FF5330CD2BD0F0E20057A538 /* AppDelegate.swift */,
 				FF5330CF2BD0F0E20057A538 /* SceneDelegate.swift */,
 				FF5330D32BD0F0E20057A538 /* Main.storyboard */,
 				FF5330E32BD0F4930057A538 /* Kiosk.storyboard */,
 				6AAEFF9D2BFEC9A3009887B7 /* Mission.storyboard */,
 				FF5330E12BD0F37A0057A538 /* MainViewController.swift */,
+				6A636FEE2C04963500A76F35 /* Font */,
 				6AAEFF9B2BFEC6F8009887B7 /* Cell */,
 				6AAEFF9C2BFEC712009887B7 /* Kiosk */,
 				6AAEFF9A2BFEC6D2009887B7 /* Data */,
@@ -253,12 +250,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AFE117A2C0873F000853022 /* celebration.json in Resources */,
 				6A636FF02C04965100A76F35 /* Jalnan2.otf in Resources */,
 				FF5330E42BD0F4930057A538 /* Kiosk.storyboard in Resources */,
 				FF5330D72BD0F0E40057A538 /* Assets.xcassets in Resources */,
 				6ABF016A2C062CCC0005A29E /* retry2.json in Resources */,
 				FF5330DA2BD0F0E40057A538 /* Base in Resources */,
-				FF5D66872C083852008B876A /* celebration.json in Resources */,
 				6AAEFF9E2BFEC9A3009887B7 /* Mission.storyboard in Resources */,
 				FF5330D52BD0F0E20057A538 /* Base in Resources */,
 			);
@@ -271,7 +268,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFFD515C2C01E8E300033F22 /* NewOptionViewController.swift in Sources */,
 				FF5330E62BD0F7860057A538 /* KioskViewController.swift in Sources */,
 				6A8A83FF2BFDF7E700AA75CA /* MissionData.swift in Sources */,
 				FF5330EA2BD1261B0057A538 /* FoodCell.swift in Sources */,

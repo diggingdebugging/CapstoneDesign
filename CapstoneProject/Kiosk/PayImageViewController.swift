@@ -26,6 +26,9 @@ class PayImageViewController: UIViewController {
         userInfo: nil,
         repeats: true
         )
+        
+        // 화면내리기 막기
+        isModalInPresentation = true
     }
     
     func addUILabel(){
@@ -66,8 +69,8 @@ class PayImageViewController: UIViewController {
                 navigationController.setViewControllers([kioskViewController], animated: true)
             } else {
                 // 네비게이션 컨트롤러가 없으면 모달로 표시
-                let storyboard = UIStoryboard(name: "Kiosk", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "KioskViewController") as! KioskViewController
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
                 vc.modalPresentationStyle = .fullScreen
                 present(vc, animated: true)
             }

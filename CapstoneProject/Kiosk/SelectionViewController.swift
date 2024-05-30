@@ -27,6 +27,9 @@ class SelectionViewController: UIViewController {
         takeOutButton.addTarget(self, action: #selector(takeOutButtonClicked), for: .touchUpInside)
         confirmButton.addTarget(self, action: #selector(confirmButtonClicked), for: .touchUpInside)
         cancelButton.addTarget(self, action: #selector(cancelButtonClicked), for: .touchUpInside)
+        
+        // 화면내리기 막기
+        isModalInPresentation = true
     }
 }
 

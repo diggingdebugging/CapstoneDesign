@@ -25,6 +25,9 @@ class PayViewController: UIViewController {
         setWidget()
         cancelButton.addTarget(self, action: #selector(cancelButtonClicked), for: .touchUpInside)
         requestButton.addTarget(self, action: #selector(requestButtonClicked), for: .touchUpInside)
+        
+        // 화면내리기 막기
+        isModalInPresentation = true
     }
     
 }

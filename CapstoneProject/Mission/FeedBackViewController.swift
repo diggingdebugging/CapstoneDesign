@@ -18,6 +18,9 @@ class FeedBackViewController: UIViewController {
         setupUI()
         // 터치이벤트
         retryButton.addTarget(self, action: #selector(retryButtonTouched), for: .touchUpInside)
+        
+        // 화면내리기 막기
+        isModalInPresentation = true
     }
     
     func setupUI(){

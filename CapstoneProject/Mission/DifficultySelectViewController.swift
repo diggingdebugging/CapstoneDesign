@@ -142,9 +142,11 @@ class DifficultySelectViewController: UIViewController {
         
         // 재시동
         randomDrink = foodList?.randomElement()
-        for i in 0...1 {
-            while answers[i].selectDrink?.name == randomDrink?.name {
-                randomDrink = foodList?.randomElement()
+        for _ in 0...1 { // 2번 반복
+            for i in 0...answers.count - 1 {
+                while answers[i].selectDrink?.name == randomDrink?.name {
+                    randomDrink = foodList?.randomElement()
+                }
             }
             
             if randomDrink as? Coffee != nil { // Coffee로 캐스팅이되면

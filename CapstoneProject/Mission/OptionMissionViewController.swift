@@ -34,6 +34,9 @@ class OptionMissionViewController: UIViewController {
         super.viewDidLoad()
         missionRef = kioskMissionViewController?.mission
         setupUI()
+        
+        // 화면내리기 막기
+        isModalInPresentation = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,7 +64,7 @@ class OptionMissionViewController: UIViewController {
         }
     }
     
-    func buttonSetting(){
+    func buttonSetting(){ // cold, basic
         hotOrColdBtn[1].isSelected = true
         optionBtn[0].isSelected = true
         hotOrColdBtn[0].isEnabled = false

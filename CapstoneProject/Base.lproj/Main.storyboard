@@ -17,24 +17,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ik5-Gt-dlA">
-                                <rect key="frame" x="30" y="363.66666666666669" width="333" height="150.00000000000006"/>
+                                <rect key="frame" x="30" y="365.66666666666669" width="333" height="146"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esL-PI-Nwr">
-                                        <rect key="frame" x="0.0" y="0.0" width="333" height="50"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="연습 모드">
-                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
-                                        </buttonConfiguration>
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="48"/>
+                                        <color key="backgroundColor" red="0.078431372550000003" green="0.21960784310000001" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="연습 모드"/>
                                         <connections>
                                             <action selector="kioskButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WiH-3w-UC0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqg-BG-KIS">
-                                        <rect key="frame" x="0.0" y="100" width="333" height="50"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="미션 모드">
-                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
-                                        </buttonConfiguration>
+                                        <rect key="frame" x="0.0" y="98" width="333" height="48"/>
+                                        <color key="backgroundColor" red="0.078431372550000003" green="0.21960784310000001" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="미션 모드"/>
                                         <connections>
                                             <action selector="gptButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UHu-mf-3nO"/>
                                         </connections>
