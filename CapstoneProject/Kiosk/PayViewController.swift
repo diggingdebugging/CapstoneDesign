@@ -18,6 +18,7 @@ class PayViewController: UIViewController {
     @IBOutlet weak var totalPriceView: UILabel!
     
     var selectionViewController: SelectionViewController!
+    var systemColor = UIColor(hexCode: "143875")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,23 +81,25 @@ extension PayViewController{ // widgetStyle
         
         totalView.layer.cornerRadius = 10
         totalView.layer.borderWidth = 2
-        totalView.layer.borderColor = UIColor.systemOrange.cgColor
+        totalView.layer.borderColor = systemColor.cgColor
         
         monthView.layer.cornerRadius = 10
         monthView.layer.borderWidth = 2
-        monthView.layer.borderColor = UIColor.systemOrange.cgColor
+        monthView.layer.borderColor = systemColor.cgColor
         
         numberView.layer.cornerRadius = 10
         numberView.layer.borderWidth = 2
-        numberView.layer.borderColor = UIColor.systemOrange.cgColor
+        numberView.layer.borderColor = systemColor.cgColor
         
         cancelButton.layer.cornerRadius = 10
         cancelButton.layer.borderWidth = 2
-        cancelButton.layer.borderColor = UIColor.systemOrange.cgColor
+        cancelButton.layer.borderColor = systemColor.cgColor
+        cancelButton.setTitleColor(systemColor, for: .normal)
         
         requestButton.layer.cornerRadius = 10
         requestButton.layer.borderWidth = 2
-        requestButton.layer.borderColor = UIColor.systemOrange.cgColor
+        requestButton.layer.borderColor = systemColor.cgColor
+        requestButton.setTitleColor(systemColor, for: .normal)
         
         totalPriceView.text = String(selectionViewController.totalPrice!)
     }

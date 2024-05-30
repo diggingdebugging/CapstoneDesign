@@ -35,7 +35,7 @@
                                 </items>
                             </tabBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Tya-LO-hxQ">
-                                <rect key="frame" x="0.0" y="152.33333333333337" width="393" height="477.99999999999989"/>
+                                <rect key="frame" x="0.0" y="152.33333333333337" width="393" height="478"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="diM-dy-VKc">
                                     <size key="itemSize" width="112" height="179"/>
@@ -224,7 +224,6 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="minus" catalog="system"/>
                                                     <connections>
-                                                        <action selector="calcButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Y0a-xk-cSo"/>
                                                         <action selector="minusButtonTapped:" destination="WWU-ur-3lx" eventType="touchUpInside" id="Gye-mr-zND"/>
                                                     </connections>
                                                 </button>
@@ -277,6 +276,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="28"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="calcButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NzT-qQ-9Mg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KPg-jH-cJN"/>
@@ -344,7 +346,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNl-5j-tV4">
                                                         <rect key="frame" x="0.0" y="240.66666666666669" width="156.66666666666666" height="55"/>
-                                                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                                                        <color key="tintColor" red="0.078431372549019607" green="0.2196078431372549" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="취소"/>
                                                     </button>
@@ -365,7 +367,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDY-ou-AHE">
                                                         <rect key="frame" x="0.0" y="240.66666666666669" width="156.33333333333334" height="55"/>
-                                                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                                                        <color key="tintColor" red="0.078431372549019607" green="0.2196078431372549" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="확인"/>
                                                     </button>
@@ -556,13 +558,13 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8GW-f1-cr4">
                                                 <rect key="frame" x="0.0" y="0.0" width="113" height="34.333333333333336"/>
-                                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                                <color key="tintColor" red="0.078431372549019607" green="0.2196078431372549" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="취소"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTO-2A-AyF">
                                                 <rect key="frame" x="200" y="0.0" width="113" height="34.333333333333336"/>
-                                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                                <color key="tintColor" red="0.078431372549019607" green="0.2196078431372549" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="승인요청"/>
                                             </button>
@@ -754,17 +756,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YH-4j-Inr">
-                                        <rect key="frame" x="206" y="174" width="146" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="8LW-IT-azO"/>
-                                            <constraint firstAttribute="width" constant="146" id="yWs-68-lbb"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Een-Gg-7G2">
                                         <rect key="frame" x="30" y="356" width="333" height="40.333333333333314"/>
                                         <subviews>
@@ -876,6 +867,17 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YH-4j-Inr">
+                                        <rect key="frame" x="206" y="186" width="146" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="8LW-IT-azO"/>
+                                            <constraint firstAttribute="width" constant="146" id="yWs-68-lbb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="LRZ-CS-uch"/>
                                 <constraints>
@@ -889,7 +891,7 @@
                                     <constraint firstItem="i6q-mi-Z0H" firstAttribute="top" secondItem="LRZ-CS-uch" secondAttribute="top" constant="20" id="QNl-qj-eDk"/>
                                     <constraint firstItem="ulq-c7-jdc" firstAttribute="top" secondItem="xx8-jS-Otl" secondAttribute="bottom" constant="50" id="Qbx-Yn-er7"/>
                                     <constraint firstItem="LRZ-CS-uch" firstAttribute="trailing" secondItem="ulq-c7-jdc" secondAttribute="trailing" constant="30" id="R3c-zP-NFp"/>
-                                    <constraint firstItem="0YH-4j-Inr" firstAttribute="top" secondItem="z4J-fb-Sas" secondAttribute="bottom" constant="34" id="Rbs-Ov-n58"/>
+                                    <constraint firstItem="0YH-4j-Inr" firstAttribute="top" secondItem="z4J-fb-Sas" secondAttribute="bottom" constant="46" id="Rbs-Ov-n58"/>
                                     <constraint firstItem="LRZ-CS-uch" firstAttribute="bottom" secondItem="MVP-ad-YBN" secondAttribute="bottom" constant="30" id="SgJ-74-Icr"/>
                                     <constraint firstItem="ulq-c7-jdc" firstAttribute="leading" secondItem="LRZ-CS-uch" secondAttribute="leading" constant="30" id="VuM-3K-7PD"/>
                                     <constraint firstItem="0YH-4j-Inr" firstAttribute="leading" secondItem="xx8-jS-Otl" secondAttribute="trailing" constant="30" id="YAc-dU-mJQ"/>

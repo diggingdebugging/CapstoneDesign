@@ -17,6 +17,7 @@ class SelectionViewController: UIViewController {
     var isFHChecked: Bool = false // foodhere 매장식사
     var isTOChecked: Bool = false // takeout 포장하기
     var totalPrice: Int?
+    var systemColor = UIColor(hexCode: "143875")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,15 +57,15 @@ extension SelectionViewController{ // Button EventHandlers
     }
     
     func configureButton(button: UIButton, isActive: Bool) {
-        button.setTitleColor(isActive ? .white : .systemOrange, for: .normal)
-        button.backgroundColor = isActive ? .systemOrange : .white
+        button.setTitleColor(isActive ? .white : systemColor, for: .normal)
+        button.backgroundColor = isActive ? systemColor : .white
     }
     
     @objc func confirmButtonClicked(sender: UIButton){
         forHereButton.backgroundColor = .white
         takeOutButton.backgroundColor = .white
-        forHereButton.setTitleColor(.systemOrange, for: .normal)
-        takeOutButton.setTitleColor(.systemOrange, for: .normal)
+        forHereButton.setTitleColor(systemColor, for: .normal)
+        takeOutButton.setTitleColor(systemColor, for: .normal)
         
         
         if isFHChecked == true || isTOChecked == true {
@@ -84,20 +85,24 @@ extension SelectionViewController{ //  widgetStyle
         selectionView.layer.cornerRadius = 10 // 뷰 코너를 둥글게
         
         forHereButton.layer.cornerRadius = 10
-        forHereButton.layer.borderColor = UIColor.systemOrange.cgColor
+        forHereButton.layer.borderColor = systemColor.cgColor
         forHereButton.layer.borderWidth = 2
+        forHereButton.setTitleColor(systemColor, for: .normal)
         
         takeOutButton.layer.cornerRadius = 10
-        takeOutButton.layer.borderColor = UIColor.systemOrange.cgColor
+        takeOutButton.layer.borderColor = systemColor.cgColor
         takeOutButton.layer.borderWidth = 2
+        takeOutButton.setTitleColor(systemColor, for: .normal)
         
         confirmButton.layer.cornerRadius = 10
-        confirmButton.layer.borderColor = UIColor.systemOrange.cgColor
+        confirmButton.layer.borderColor = systemColor.cgColor
         confirmButton.layer.borderWidth = 2
+        confirmButton.setTitleColor(systemColor, for: .normal)
         
         cancelButton.layer.cornerRadius = 10
-        cancelButton.layer.borderColor = UIColor.systemOrange.cgColor
+        cancelButton.layer.borderColor = systemColor.cgColor
         cancelButton.layer.borderWidth = 2
+        cancelButton.setTitleColor(systemColor, for: .normal)
     }
 }
 
