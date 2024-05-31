@@ -259,7 +259,7 @@ extension KioskMissionViewController: UITableViewDelegate, UITableViewDataSource
             cell.optionTwoLabel.text = "뜨거움(HOT)"
         }
         else if foodState.hotOrCold == .cold {
-            cell.optionTwoLabel.text = "차가움(ICE)"
+            cell.optionTwoLabel.text = "차가움(COLD)"
         }
         
         // cell의 density Option

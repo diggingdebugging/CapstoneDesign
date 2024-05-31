@@ -393,7 +393,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="뜨거움(HOT)         차가움(ICE)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vvs-DC-UMg">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="뜨거움(HOT)         차가움(COLD)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vvs-DC-UMg">
                                         <rect key="frame" x="30" y="286" width="333" height="40"/>
                                         <color key="backgroundColor" red="0.078431372549019607" green="0.21568627450980393" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -464,7 +464,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="ICE">
+                                                <buttonConfiguration key="configuration" style="plain" title="COLD">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -736,7 +736,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="f1g-Bo-7zb"/>
-        <segue reference="FIo-ij-9DK"/>
+        <segue reference="Erm-JF-iR4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="minus" catalog="system" width="128" height="26"/>

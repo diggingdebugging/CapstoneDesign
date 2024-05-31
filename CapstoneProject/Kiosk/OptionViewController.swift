@@ -206,7 +206,7 @@ extension OptionViewController{ // snackbar code
         attributes.entranceAnimation = .init(translate: .init(duration: 0.3, anchorPosition: .top))
         attributes.exitAnimation = .init(translate: .init(duration: 0.2, anchorPosition: .top))
         attributes.displayDuration = duration
-        let defaultButtonColor =  EKColor(UIColor.systemBlue)
+        let defaultButtonColor =  EKColor(UIColor.systemOrange)
 
         let title = EKProperty.LabelContent(text: message, style: .init(font: .systemFont(ofSize: 20), color: defaultButtonColor, alignment: .center))
         let descriptionContent = EKProperty.LabelContent(text: description ?? "", style: .init(font: .systemFont(ofSize: 14), color: .white))

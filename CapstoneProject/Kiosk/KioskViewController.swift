@@ -172,7 +172,7 @@ extension KioskViewController: UITableViewDelegate, UITableViewDataSource{ // Ta
             cell.optionTwoLabel.text = "뜨거운(HOT)"
         }
         else if foodState.hotOrCold == .cold {
-            cell.optionTwoLabel.text = "차가운(ICE)"
+            cell.optionTwoLabel.text = "차가운(COLD)"
         }
         
         // cell의 density Option
